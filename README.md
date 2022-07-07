@@ -5,6 +5,12 @@ Why this project and what is it about? What is the purpose?
 
 Initial Idea: A book search where you can view based on genre. save or like books? Remove books you are not interested in?
 
+Features:
+*Drop down menu for subjects
+*Search for subject so user can be precise
+*Order by year?
+*Comment section
+
 ### Requirements
 
 - Have json server installed
