@@ -2,7 +2,25 @@
 // get main div and clear it out
 // make sure ids are unique
 
+// NODE GETTERS
 const mainDiv = () => document.getElementById("main");
+const scienceFictionLink = () => document.getElementById("ScienceF");
+
+// EVENT LISTENERS
+
+function attachScienceFictionCLickEvent() {
+  scienceFictionLink().addEventListener("click", renderScienceFictionPage);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".fixed-action-btn");
+  var instances = M.FloatingActionButton.init(elems, {
+    direction: "left",
+  });
+  instances.open();
+});
+
+// EVENT HANDLERS
 
 function renderHomePage() {
   // create the html elements for the home page
@@ -19,71 +37,94 @@ function renderHomePage() {
   mainDiv().appendChild(p);
 }
 
+function renderScienceFictionPage() {
+  resetMainDiv();
+
+  const h1 = document.createElement("h1");
+  const p = document.createElement("p");
+  const button = document.createElement("button");
+
+  h1.innerText = "Science Fiction";
+  p.innerText = "Use button to select year";
+  button.innerText = "Years";
+
+  h1.style.marginTop = "0";
+  p.style.marginTop = "0";
+  button.style.marginTop = "0";
+
+  mainDiv().appendChild(h1);
+  mainDiv().appendChild(p);
+  mainDiv().appendChild(button);
+}
+
+// HELPERS
 function resetMainDiv() {
   mainDiv().innerHTML = "";
 }
 // cleans up code because you will be using it often
 
-document.addEventListener("DOMContentLoaded", () => renderHomePage());
+// DOM CONTENT LOADED
+document.addEventListener("DOMContentLoaded", () => {
+  renderHomePage();
+  attachScienceFictionCLickEvent();
+});
 
-
-
+// not working and messed up button
 // drop down button
 
+// let subjects = [];
 
-// let breeds = [];
-
-// function getBreeds() {
-//   const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
+// function getSubjects() {
+//   const imgUrl = "https://covers.openlibrary.org/b/isbn/9780385533225-S.jpg";
 //   return fetch(imgUrl)
 //     .then((response) => response.json())
 //     .then((response) => {
 //       console.log("response", response.message);
-//       const dogImgContainer = document.getElementById("dog-image-container");
+//       const subjectImgContainer = document.getElementById("main");
 //       response.message.forEach((url) => {
 //         const img = document.createElement("img");
 //         img.src = url;
-//         dogImgContainer.append(img);
+//         subjectImgContainer.append(img);
 //       });
 //     });
 // }
 
-// function getBreedNames() {
-//   const breedUrl = "https://dog.ceo/api/breeds/list/all";
-//   fetch(breedUrl)
+// function getSubjectNames() {
+//   const subjectUrl = "http://openlibrary.org/subjects.json?published_in=any";
+//   fetch(subjectUrl)
 //     .then((response) => response.json())
 //     .then((response) => {
-//       breeds = Object.keys(response.message);
-//       addBreedNamesToDom(breeds);
+//       subjects = Object.key(response.message);
+//       addSubjectNamesToDom(subjects);
 //     });
 // }
 
-// function addBreedNamesToDom(breeds) {
-//   const ul = document.querySelector("#dog-breeds");
-//   breeds.map((breed) => {
+// function addSubjectNamesToDom(covers) {
+//   const ul = document.querySelector("#subject-dropdown");
+//   covers.map((subjects) => {
 //     const li = document.createElement("li");
-//     li.textContent = breed;
+//     li.textContent = subjects;
 //     ul.append(li);
 //   });
 // }
 
 // document.addEventListener("click", (event) => {
-//   if (event.target.matches("li")) {
+//   if (event.target.matches("dropdown")) {
 //     event.target.style.color = "red";
 //   }
 // });
 
 // document.addEventListener("change", (event) => {
-//   if (event.target.matches("#breed-dropdown")) {
-//     const ul = document.querySelector("#dog-breeds");
+//   if (event.target.matches("#subject-dropdown")) {
+//     const ul = document.querySelector("#subject-dropdown");
 //     ul.innerHTML = "";
-//     const filteredBreeds = breeds.filter(
-//       (breed) => breed[0] === event.target.value
+//     const filteredSubjects = subjects.filter(
+//       (subject) => subject[0] === event.target.value
 //     );
-//     addBreedNamesToDom(filteredBreeds);
+//     addSubjectNamesToDom(filteredSubjects);
 //   }
 // });
 
-// getBreeds();
-// getBreedNames();
-// addBreedNamesToDom();
+// getSubjects();
+// getSubjectNames();
+// addSubjectNamesToDom();
