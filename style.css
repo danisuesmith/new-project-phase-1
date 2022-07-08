@@ -21,21 +21,29 @@ nav {
 }
 
 .container h1 {
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   color: #3f3f3f;
   display: inline-block;
   margin-block-end: 50px;
+  text-align: center;
 }
 
 .container p {
   color: #3f3f3f;
   display: inline-block;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .website-logo {
   font-size: 50px;
   margin-left: 5%;
   color: #f1f1f1;
+}
+
+.sf-dates {
+  margin-left: 300px;
 }
 
 /* drop down button in nav */

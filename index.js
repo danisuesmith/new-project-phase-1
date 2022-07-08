@@ -1,24 +1,19 @@
 // alert("test");
-// get main div and clear it out
-// make sure ids are unique
 
 // NODE GETTERS
 const mainDiv = () => document.getElementById("main");
+const homePageLink = () => document.getElementById("homepage-link");
 const scienceFictionLink = () => document.getElementById("ScienceF");
 
 // EVENT LISTENERS
 
+function attachHomePageLink() {
+  homePageLink().addEventListener("click", renderHomePage);
+}
+
 function attachScienceFictionCLickEvent() {
   scienceFictionLink().addEventListener("click", renderScienceFictionPage);
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".fixed-action-btn");
-  var instances = M.FloatingActionButton.init(elems, {
-    direction: "left",
-  });
-  instances.open();
-});
 
 // EVENT HANDLERS
 
@@ -42,19 +37,18 @@ function renderScienceFictionPage() {
 
   const h1 = document.createElement("h1");
   const p = document.createElement("p");
-  const button = document.createElement("button");
+  const ul = document.createElement("ul");
 
   h1.innerText = "Science Fiction";
-  p.innerText = "Use button to select year";
-  button.innerText = "Years";
+  p.innerText = "Use button to select years";
+  ul.innerText = "1500-1600 1700-1800";
 
   h1.style.marginTop = "0";
   p.style.marginTop = "0";
-  button.style.marginTop = "0";
 
   mainDiv().appendChild(h1);
   mainDiv().appendChild(p);
-  mainDiv().appendChild(button);
+  mainDiv().appendChild(ul);
 }
 
 // HELPERS
@@ -66,8 +60,26 @@ function resetMainDiv() {
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", () => {
   renderHomePage();
+  attachHomePageLink();
   attachScienceFictionCLickEvent();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // not working and messed up button
 // drop down button
