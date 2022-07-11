@@ -1,85 +1,99 @@
 // alert("test");
 
 // NODE GETTERS
-const mainDiv = () => document.getElementById("main");
-const homePageLink = () => document.getElementById("homepage-link");
-const scienceFictionLink = () => document.getElementById("ScienceF");
+// const mainDiv = () => document.getElementById("main");
+// const homePageLink = () => document.getElementById("homepage-link");
+// const scienceFictionLink = () => document.getElementById("fav-books");
 
-// EVENT LISTENERS
+// // EVENT LISTENERS
+const spellList = document.getElementById("spellList");
+const searchBar = document.getElementById("searchBar");
 
-function attachHomePageLink() {
-  homePageLink().addEventListener("click", renderHomePage);
-}
+let hpSpells = [];
 
-function attachScienceFictionCLickEvent() {
-  scienceFictionLink().addEventListener("click", renderScienceFictionPage);
-}
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredSpells = hpSpells.filter((spell) => {
+    return (
+      spell.spell.toLowerCase().includes(searchString) ||
+      spell.use.toLowerCase().includes(searchString)
+    );
+  });
+  displaySpells(filteredSpells);
+});
+
+const loadSpells = async () => {
+  try {
+    const res = await fetch(
+      "https://fedeperin-harry-potter-api-en.herokuapp.com/spells"
+    );
+    
+
+const displaySpells = (spellList) => {
+  const htmlString = hpSpells
+    .map((htmlString) => {
+      return `
+            <li class="Book">
+                <h2>${htmlString.spell}</h2>
+                <p>House: ${htmlString.use}</p>
+            </li>
+        `;
+    })
+    .join("");
+  spellList.innerHTML = htmlString;
+};
+
+loadSpells();
+displaySpells();
+
+// function attachHomePageLink() {
+//   homePageLink().addEventListener("click", renderHomePage);
+// }
+
+// function attachScienceFictionCLickEvent() {
+//   scienceFictionLink().addEventListener("click", renderScienceFictionPage);
+// }
 
 // EVENT HANDLERS
 
-function renderHomePage() {
-  // create the html elements for the home page
-  resetMainDiv();
+// function renderHomePage() {
+//   // create the html elements for the home page
+//   resetMainDiv();
+// }
 
-  const h1 = document.createElement("h1");
-  const p = document.createElement("p");
+// // make an "my picks book page?"
+// function renderScienceFictionPage() {
+//   resetMainDiv();
 
-  h1.innerText = "Books by Subject Homepage";
-  p.innerText =
-    "Minim quis consequat enim pariatur esse consectetur consequat ullamco ad aute fugiat ea esse. Culpa nulla ipsum deserunt ut amet in voluptate fugiat ullamco sunt nisi consequat. Eu ut incididunt aliqua culpa aliquip. Non magna ea elit magna nisi sit quis sunt enim ut et. Nisi sit duis cupidatat consectetur nostrud eu eiusmod enim ex quis. Sunt deserunt ipsum mollit esse nisi laboris est anim sunt aliqua cillum incididunt amet. Aute aute id excepteur mollit sit adipisicing aliquip.";
+//   const h1 = document.createElement("h1");
+//   const p = document.createElement("p");
+//   const ul = document.createElement("ul");
 
-  mainDiv().appendChild(h1);
-  mainDiv().appendChild(p);
-}
+//   h1.innerText = "Science Fiction";
+//   p.innerText = "Use button to select years";
+//   ul.innerText = "1500-1600 1700-1800";
 
-function renderScienceFictionPage() {
-  resetMainDiv();
+//   h1.style.marginTop = "0";
+//   p.style.marginTop = "0";
 
-  const h1 = document.createElement("h1");
-  const p = document.createElement("p");
-  const ul = document.createElement("ul");
+//   mainDiv().appendChild(h1);
+//   mainDiv().appendChild(p);
+//   mainDiv().appendChild(ul);
+// }
 
-  h1.innerText = "Science Fiction";
-  p.innerText = "Use button to select years";
-  ul.innerText = "1500-1600 1700-1800";
-
-  h1.style.marginTop = "0";
-  p.style.marginTop = "0";
-
-  mainDiv().appendChild(h1);
-  mainDiv().appendChild(p);
-  mainDiv().appendChild(ul);
-}
-
-// HELPERS
-function resetMainDiv() {
-  mainDiv().innerHTML = "";
-}
+// // HELPERS
+// function resetMainDiv() {
+//   mainDiv().innerHTML = "";
+// }
 // cleans up code because you will be using it often
 
-// DOM CONTENT LOADED
-document.addEventListener("DOMContentLoaded", () => {
-  renderHomePage();
-  attachHomePageLink();
-  attachScienceFictionCLickEvent();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // DOM CONTENT LOADED
+// document.addEventListener("DOMContentLoaded", () => {
+//   renderHomePage();
+//   attachHomePageLink();
+//   attachScienceFictionCLickEvent();
+// });
 
 // not working and messed up button
 // drop down button
@@ -119,23 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //     ul.append(li);
 //   });
 // }
-
-// document.addEventListener("click", (event) => {
-//   if (event.target.matches("dropdown")) {
-//     event.target.style.color = "red";
-//   }
-// });
-
-// document.addEventListener("change", (event) => {
-//   if (event.target.matches("#subject-dropdown")) {
-//     const ul = document.querySelector("#subject-dropdown");
-//     ul.innerHTML = "";
-//     const filteredSubjects = subjects.filter(
-//       (subject) => subject[0] === event.target.value
-//     );
-//     addSubjectNamesToDom(filteredSubjects);
-//   }
-// });
 
 // getSubjects();
 // getSubjectNames();

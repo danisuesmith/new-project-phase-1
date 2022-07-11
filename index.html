@@ -8,28 +8,20 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="website-logo" id="homepage-link">Book Finder</a>
-
-        <!-- want subject to be a dropdown / do I want this in navigation bar?-->
-
-        <div class="dropdown">
-          <a>Books by Genre</a>
-          <div class="dropdown-content">
-            <a href="#" id="Fiction">Fiction</a>
-            <a href="#" id="ScienceF">Science Fiction</a>
-            <a href="#" id="Fantasy">Fantasy</a>
-            <a href="#" id="Romance">Romance</a>
-          </div>
-        </div>
+    <div class="container">
+      <h1>&#x2728; Harry Potter Spell Search &#x2728;</h1>
+      <div id="searchWrapper">
+        <input
+          type="text"
+          name="searchBar"
+          id="searchBar"
+          placeholder="search for a character"
+        />
       </div>
-    </nav>
-
-    <!-- Card content -->
-
-    <div id="main" class="container"></div>
+      <ul id="spellList"></ul>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="index.js"></script>
