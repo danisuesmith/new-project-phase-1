@@ -4,24 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Search</title>
+    <title>Poem Search</title>
 
     <link rel="stylesheet" href="style.css" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="website-logo" id="homepage-link">Book Finder</a>
-        <div class="dropdown">
-            <a href="#" id="Random Poem">Random Poem</a>
-            <a href="#" id="Contact">Contact and Info</a>
-          </div>
-        </div>
+        <a href="#" class="website-logo">Poem A Day App</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#" id="random-poem">Random Poem</a></li>
+          <li><a href="#" id="contact">Contact and Info</a></li>
+        </ul>
       </div>
     </nav>
 
+    <div id="main" class="container white" style="margin-top: 1px"></div>
+
     <!--JavaScript at end of body for optimized loading-->
     <script src="index.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>

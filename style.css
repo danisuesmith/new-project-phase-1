@@ -1,38 +1,27 @@
 body {
-  background-color: #5e755c;
-  margin: 0;
-  padding: 0;
+  background-color: #c4d3d4a8;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-nav {
-  background-color: #3f443e;
+.nav-wrapper {
+  background-color: #8b9f9f;
   white-space: nowrap;
   display: flex;
 }
 
-.container {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: inherit;
-}
-
 .container h1 {
-  padding-bottom: 100px;
-  color: #3f3f3f;
+  color: #6a6a6a;
   display: inline-block;
-  margin-block-end: 50px;
-  text-align: center;
+  padding-left: 50px;
+  padding-top: 20px;
+  font-size: 40px;
 }
 
 .container p {
-  color: #3f3f3f;
+  color: #6a6a6a;
   display: inline-block;
-  text-align: center;
+  text-align: left;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -40,20 +29,20 @@ nav {
 .website-logo {
   font-size: 50px;
   margin-left: 5%;
-  color: #f1f1f1;
+  color: whitesmoke;
   display: inline-block;
+  font-style: none;
 }
 
-#fav-books {
-  margin-left: 300px;
-  font-size: 30px;
+#random-poem {
+  margin-left: 400px;
+  font-size: 20px;
   display: inline-block;
-  color: #f1f1f1;
+  color: whitesmoke;
 }
 
 #contact {
-  font-size: 30px;
-  margin-left: 100px;
+  font-size: 20px;
   display: inline-block;
-  color: #f1f1f1;
+  color: whitesmoke;
 }

@@ -20,3 +20,7 @@ Features:
 
 - Open index.html in browser
 - Run JSON server for db.json
+
+### Inspiration
+
+- Enoch Griffith

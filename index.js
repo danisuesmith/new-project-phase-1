@@ -3,7 +3,8 @@
 // NODE GETTERS
 const mainDiv = () => document.getElementById("main");
 const homePageLink = () => document.getElementById("homepage-link");
-const scienceFictionLink = () => document.getElementById("fav-books");
+const randomPoemLink = () => document.getElementById("random-poem");
+const contactLink = () => document.getElementById("contact");
 
 // EVENT LISTENERS
 
@@ -11,35 +12,37 @@ function attachHomePageLink() {
   homePageLink().addEventListener("click", renderHomePage);
 }
 
-function attachScienceFictionCLickEvent() {
-  scienceFictionLink().addEventListener("click", renderScienceFictionPage);
+function attachRandomPoemLink() {
+  randomPoemLink().addEventListener("click", renderRandomPoemPage);
 }
 
 // EVENT HANDLERS
 
 function renderHomePage() {
-  // create the html elements for the home page
   resetMainDiv();
-}
-
-// make an "my picks book page?"
-function renderScienceFictionPage() {
-  resetMainDiv();
-
   const h1 = document.createElement("h1");
+
   const p = document.createElement("p");
-  const ul = document.createElement("ul");
 
-  h1.innerText = "Science Fiction";
-  p.innerText = "Use button to select years";
-  ul.innerText = "1500-1600 1700-1800";
-
-  h1.style.marginTop = "0";
-  p.style.marginTop = "0";
+  h1.innerText = "About: Random Poem App";
+  p.innerText =
+    "Use this website to find your poem for the day. Maybe it gives you inpiration for your workday or leads you to new incredible writers. I hope you enjoy!";
 
   mainDiv().appendChild(h1);
   mainDiv().appendChild(p);
-  mainDiv().appendChild(ul);
+}
+
+// make an "my picks book page?"
+function renderRandomPoemPage() {
+  resetMainDiv();
+
+  const h1 = document.createElement("h1");
+
+  h1.innerText = "POEM OF THE DAY";
+
+  h1.style.marginTop = "0";
+
+  mainDiv().appendChild(h1);
 }
 
 // HELPERS
@@ -52,48 +55,6 @@ function resetMainDiv() {
 document.addEventListener("DOMContentLoaded", () => {
   renderHomePage();
   attachHomePageLink();
-  attachScienceFictionCLickEvent();
+  renderRandomPoemPage();
+  attachRandomPoemLink();
 });
-
-// not working and messed up button
-// drop down button
-
-// let subjects = [];
-
-// function getSubjects() {
-//   const imgUrl = "https://covers.openlibrary.org/b/isbn/9780385533225-S.jpg";
-//   return fetch(imgUrl)
-//     .then((response) => response.json())
-//     .then((response) => {
-//       console.log("response", response.message);
-//       const subjectImgContainer = document.getElementById("main");
-//       response.message.forEach((url) => {
-//         const img = document.createElement("img");
-//         img.src = url;
-//         subjectImgContainer.append(img);
-//       });
-//     });
-// }
-
-// function getSubjectNames() {
-//   const subjectUrl = "http://openlibrary.org/subjects.json?published_in=any";
-//   fetch(subjectUrl)
-//     .then((response) => response.json())
-//     .then((response) => {
-//       subjects = Object.key(response.message);
-//       addSubjectNamesToDom(subjects);
-//     });
-// }
-
-// function addSubjectNamesToDom(covers) {
-//   const ul = document.querySelector("#subject-dropdown");
-//   covers.map((subjects) => {
-//     const li = document.createElement("li");
-//     li.textContent = subjects;
-//     ul.append(li);
-//   });
-// }
-
-// getSubjects();
-// getSubjectNames();
-// addSubjectNamesToDom();
