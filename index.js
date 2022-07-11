@@ -4,7 +4,7 @@
 const mainDiv = () => document.getElementById("main");
 const homePageLink = () => document.getElementById("homepage-link");
 const randomPoemLink = () => document.getElementById("random-poem-link");
-const contactLink = () => document.getElementById("contact");
+const poemList = () => document.getElementById("poem-list");
 
 // EVENT LISTENERS
 
@@ -14,6 +14,10 @@ function attachHomePageLink() {
 
 function attachRandomPoemClickEvent() {
   randomPoemLink().addEventListener("click", renderRandomPoemPage);
+}
+
+function attachPoemListLink() {
+  poemList().addEventListener("click", renderPoemListPage);
 }
 
 // EVENT HANDLERS
@@ -37,9 +41,21 @@ function renderRandomPoemPage() {
 
   const h1 = document.createElement("h1");
 
-  h1.innerText = "POEM OF THE DAY";
+  h1.innerText = "Poem of the Day";
 
-  h1.style.marginTop = "0";
+  h1.style.marginTop = "20px";
+
+  mainDiv().appendChild(h1);
+}
+
+function renderPoemListPage() {
+  resetMainDiv();
+
+  const h1 = document.createElement("h1");
+
+  h1.innerText = "Poem List";
+
+  h1.style.marginTop = "20px";
 
   mainDiv().appendChild(h1);
 }
@@ -55,4 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHomePage();
   attachRandomPoemClickEvent();
   attachHomePageLink();
+  attachPoemListLink();
 });
