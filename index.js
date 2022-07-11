@@ -3,7 +3,7 @@
 // NODE GETTERS
 const mainDiv = () => document.getElementById("main");
 const homePageLink = () => document.getElementById("homepage-link");
-const randomPoemLink = () => document.getElementById("random-poem");
+const randomPoemLink = () => document.getElementById("random-poem-link");
 const contactLink = () => document.getElementById("contact");
 
 // EVENT LISTENERS
@@ -12,7 +12,7 @@ function attachHomePageLink() {
   homePageLink().addEventListener("click", renderHomePage);
 }
 
-function attachRandomPoemLink() {
+function attachRandomPoemClickEvent() {
   randomPoemLink().addEventListener("click", renderRandomPoemPage);
 }
 
@@ -24,7 +24,7 @@ function renderHomePage() {
 
   const p = document.createElement("p");
 
-  h1.innerText = "About: Random Poem App";
+  h1.innerText = "About 'Poem a Day' App";
   p.innerText =
     "Use this website to find your poem for the day. Maybe it gives you inpiration for your workday or leads you to new incredible writers. I hope you enjoy!";
 
@@ -32,7 +32,6 @@ function renderHomePage() {
   mainDiv().appendChild(p);
 }
 
-// make an "my picks book page?"
 function renderRandomPoemPage() {
   resetMainDiv();
 
@@ -54,7 +53,6 @@ function resetMainDiv() {
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", () => {
   renderHomePage();
+  attachRandomPoemClickEvent();
   attachHomePageLink();
-  renderRandomPoemPage();
-  attachRandomPoemLink();
 });
