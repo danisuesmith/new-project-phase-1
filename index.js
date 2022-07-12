@@ -13,7 +13,7 @@ function attachHomePageLink() {
 }
 
 function attachRandomPoemClickEvent() {
-  randomPoemLink().addEventListener("click", renderRandomPoemPage);
+  randomPoemLink().addEventListener("click", fetchRandomPoemPage);
 }
 
 function attachPoemListLink() {
@@ -36,16 +36,19 @@ function renderHomePage() {
   mainDiv().appendChild(p);
 }
 
-function renderRandomPoemPage() {
+function renderRandomPoemPage(data) {
   resetMainDiv();
 
   const h1 = document.createElement("h1");
+  const p = document.createElement("p");
 
   h1.innerText = "Poem of the Day";
+  p.innerText = data;
 
   h1.style.marginTop = "20px";
 
   mainDiv().appendChild(h1);
+  mainDiv().appendChild(p);
 }
 
 function renderPoemListPage() {
@@ -59,6 +62,19 @@ function renderPoemListPage() {
 
   mainDiv().appendChild(h1);
 }
+
+const fetchRandomPoemPage = () => {
+  fetch("https://www.poemist.com/api/v1/randompoems")
+    .then(function (response) {
+      response.json().then(function (data) {
+        console.log(data);
+      });
+    })
+    .catch(function (error) {
+      console.log("Fetch Error:", error);
+    });
+};
+// fetch returns a promise
 
 // HELPERS
 function resetMainDiv() {
