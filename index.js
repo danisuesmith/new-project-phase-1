@@ -40,16 +40,29 @@ function renderRandomPoemPage(data) {
   resetMainDiv();
 
   const h1 = document.createElement("h1");
-  const p = document.createElement("p");
+  const h2 = document.createElement("h2");
+  const p1 = document.createElement("p1");
+  const p2 = document.createElement("p2");
+  const p3 = document.createElement("p3");
 
   h1.innerText = "Poem of the Day";
-  p.innerText = data;
+  h2.innerText = data.title;
+  p1.innerText = data.poet.name;
+  p2.innerText = data.content;
+  p3.innerText = data.poet.url;
 
-  h1.style.marginTop = "20px";
-  p.style.marginTop = "100px";
+  p3.className = "poet-url";
+
+  // h1.style.marginTop = "20px";
+  // h2.style.marginTop = "20px";
+  // p1.style.marginBottom = "20px";
+  // p2.style.marginTop = "100px";
 
   mainDiv().appendChild(h1);
-  mainDiv().appendChild(p);
+  mainDiv().appendChild(h2);
+  mainDiv().appendChild(p1);
+  mainDiv().appendChild(p2);
+  mainDiv().appendChild(p3);
 }
 
 function renderPoemListPage() {
@@ -68,11 +81,8 @@ const fetchRandomPoemPage = () => {
   fetch("https://www.poemist.com/api/v1/randompoems")
     .then((resp) => resp.json())
     .then((data) => {
-      renderRandomPoemPage(data[0].content);
-      // console.log(data[0].content);
-      // console.log(data[0].poet);
-      // renderRandomPoemPage(data[0].title);
-      // renderRandomPoemPage(data[0].content);
+      // console.log(data[0].poet.url);
+      renderRandomPoemPage(data[0]);
     });
 };
 
