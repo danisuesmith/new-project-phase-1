@@ -46,6 +46,7 @@ function renderRandomPoemPage(data) {
   p.innerText = data;
 
   h1.style.marginTop = "20px";
+  p.style.marginTop = "100px";
 
   mainDiv().appendChild(h1);
   mainDiv().appendChild(p);
@@ -65,16 +66,15 @@ function renderPoemListPage() {
 
 const fetchRandomPoemPage = () => {
   fetch("https://www.poemist.com/api/v1/randompoems")
-    .then(function (response) {
-      response.json().then(function (data) {
-        console.log(data);
-      });
-    })
-    .catch(function (error) {
-      console.log("Fetch Error:", error);
+    .then((resp) => resp.json())
+    .then((data) => {
+      renderRandomPoemPage(data[0].content);
+      // console.log(data[0].content);
+      // console.log(data[0].poet);
+      // renderRandomPoemPage(data[0].title);
+      // renderRandomPoemPage(data[0].content);
     });
 };
-// fetch returns a promise
 
 // HELPERS
 function resetMainDiv() {
