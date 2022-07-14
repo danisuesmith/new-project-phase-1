@@ -28,14 +28,14 @@ function renderHomePage() {
   resetMainDiv();
   const h1 = document.createElement("h1");
 
-  const p1 = document.createElement("p1");
+  const p = document.createElement("p");
 
   h1.innerText = "About 'Poem a Day' App";
-  p1.innerText =
+  p.innerText =
     "Use this website to find your poem for the day. Maybe it gives you inspiration for your workday or leads you to new incredible writers. I hope you enjoy!";
 
   mainDiv().appendChild(h1);
-  mainDiv().appendChild(p1);
+  mainDiv().appendChild(p);
 }
 
 function renderRandomPoemPage(data) {

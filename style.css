@@ -83,3 +83,14 @@ body {
   display: block;
   background-color: #006bb3;
 }
+
+.footer {
+  font: 20px;
+  font-weight: lighter;
+  color: #006bb3;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
