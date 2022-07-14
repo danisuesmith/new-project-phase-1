@@ -24,6 +24,7 @@ body {
   text-align: left;
   margin-left: 50px;
   margin-right: 50px;
+  padding: left 50px;
 }
 
 .website-logo {
@@ -51,8 +52,22 @@ body {
   font-size: 10 rem;
   font-weight: 100;
   color: #6a6a6a;
-  display: inline-block;
-  text-align: left;
-  margin-left: 50px;
-  margin-right: 50px;
+  padding-left: 50px;
+}
+
+.container p1 {
+  font-weight: 100;
+  color: #6a6a6a;
+  padding-left: 50px;
+}
+
+.container ul {
+  font-weight: 100;
+  color: #6a6a6a;
+}
+
+.container p2 {
+  font-weight: 100;
+  color: #6a6a6a;
+  padding-left: 50px;
 }

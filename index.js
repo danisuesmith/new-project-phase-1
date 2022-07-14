@@ -17,7 +17,7 @@ function attachRandomPoemClickEvent() {
 }
 
 function attachPoemListLink() {
-  poemList().addEventListener("click", renderPoemListPage);
+  poemList().addEventListener("click", fetchPoemListPage);
 }
 
 // EVENT HANDLERS
@@ -42,31 +42,40 @@ function renderRandomPoemPage(data) {
   const h1 = document.createElement("h1");
   const h2 = document.createElement("h2");
   const p1 = document.createElement("p1");
+  const ul = document.createElement("ul");
   const p2 = document.createElement("p2");
-  const p3 = document.createElement("p3");
 
   h1.innerText = "Poem of the Day";
   h2.innerText = data.title;
 
   p1.innerText = data.poet.name;
 
-  p2.innerText = data.content;
+  ul.innerText = data.content;
 
-  p3.innerText = data.poet.url;
+  p2.innerText = data.poet.url;
+
+  h1.style.textAlign = "left";
+  h1.style.fontSize = "40px";
 
   h2.style.textAlign = "left";
   h2.style.fontSize = "20px";
 
-  // h1.style.marginTop = "20px";
-  // h2.style.marginTop = "20px";
-  // p1.style.marginBottom = "20px";
-  // p2.style.marginTop = "100px";
+  p1.style.textAlign = "left";
+  p1.style.fontSize = "20px";
+
+  ul.style.textAlign = "left";
+  ul.style.fontSize = "15px";
+  ul.style.paddingLeft = "50px";
+
+  p2.style.textAlign = "left";
+  p2.style.fontSize = "15px";
+  p2.style.paddingLeft = "50px";
 
   mainDiv().appendChild(h1);
   mainDiv().appendChild(h2);
   mainDiv().appendChild(p1);
+  mainDiv().appendChild(ul);
   mainDiv().appendChild(p2);
-  mainDiv().appendChild(p3);
 }
 
 function renderPoemListPage() {
@@ -89,6 +98,10 @@ const fetchRandomPoemPage = () => {
       renderRandomPoemPage(data[0]);
     });
 };
+
+const fetchPoemListPage = () => {
+   fetch
+}
 
 // HELPERS
 function resetMainDiv() {
