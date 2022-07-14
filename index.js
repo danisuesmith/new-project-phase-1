@@ -47,11 +47,15 @@ function renderRandomPoemPage(data) {
 
   h1.innerText = "Poem of the Day";
   h2.innerText = data.title;
+
   p1.innerText = data.poet.name;
+
   p2.innerText = data.content;
+
   p3.innerText = data.poet.url;
 
-  p3.className = "poet-url";
+  h2.style.textAlign = "left";
+  h2.style.fontSize = "20px";
 
   // h1.style.marginTop = "20px";
   // h2.style.marginTop = "20px";
