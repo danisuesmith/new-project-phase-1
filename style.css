@@ -78,3 +78,8 @@ body {
   color: #6a6a6a;
   display: block;
 }
+
+.btn {
+  display: block;
+  background-color: #006bb3;
+}

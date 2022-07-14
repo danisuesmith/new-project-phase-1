@@ -77,6 +77,10 @@ function renderRandomPoemPage(data) {
   p2.style.paddingLeft = "50px";
 
   btn.classList.add("btn");
+  btn.style.display = "block";
+  btn.style.background = "#006bb3";
+  btn.style.marginLeft = "50px";
+  btn.style.marginTop = "10px";
 
   mainDiv().appendChild(h1);
   mainDiv().appendChild(h2);
