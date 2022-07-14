@@ -6,6 +6,8 @@ const homePageLink = () => document.getElementById("homepage-link");
 const randomPoemLink = () => document.getElementById("random-poem-link");
 const poemList = () => document.getElementById("poem-list");
 
+let poems = [];
+
 // EVENT LISTENERS
 
 function attachHomePageLink() {
@@ -17,7 +19,7 @@ function attachRandomPoemClickEvent() {
 }
 
 function attachPoemListLink() {
-  poemList().addEventListener("click", fetchPoemListPage);
+  poemList().addEventListener("click", renderPoemListPage);
 }
 
 // EVENT HANDLERS
@@ -44,6 +46,7 @@ function renderRandomPoemPage(data) {
   const p1 = document.createElement("p1");
   const ul = document.createElement("ul");
   const p2 = document.createElement("p2");
+  const btn = document.createElement("button");
 
   h1.innerText = "Poem of the Day";
   h2.innerText = data.title;
@@ -53,6 +56,8 @@ function renderRandomPoemPage(data) {
   ul.innerText = data.content;
 
   p2.innerText = data.poet.url;
+
+  btn.innerText = "Favorite ♥️";
 
   h1.style.textAlign = "left";
   h1.style.fontSize = "40px";
@@ -71,24 +76,50 @@ function renderRandomPoemPage(data) {
   p2.style.fontSize = "15px";
   p2.style.paddingLeft = "50px";
 
+  btn.classList.add("btn");
+
   mainDiv().appendChild(h1);
   mainDiv().appendChild(h2);
   mainDiv().appendChild(p1);
   mainDiv().appendChild(ul);
   mainDiv().appendChild(p2);
+  mainDiv().appendChild(btn);
 }
 
 function renderPoemListPage() {
   resetMainDiv();
 
   const h1 = document.createElement("h1");
+  const p = document.createElement("p");
 
   h1.innerText = "Poem List";
+  p.innerText = "Here are a list of favorited poems. Enjoy!";
 
   h1.style.marginTop = "20px";
 
+  p.style.textAlign = "left";
+  p.style.fontSize = "20px";
+
   mainDiv().appendChild(h1);
+  mainDiv().appendChild(p);
+  renderPoems();
 }
+
+const renderPoems = () => {
+  const ul = document.createElement("ul");
+  poems.forEach((data) => renderPoem(data, ul));
+  mainDiv().appendChild(ul);
+};
+
+const renderPoem = (data, ul) => {
+  const li = document.createElement("li");
+  li.innerText = data.poem;
+
+  li.style.textAlign = "left";
+  li.style.paddingLeft = "50px";
+
+  ul.appendChild(li);
+};
 
 const fetchRandomPoemPage = () => {
   fetch("https://www.poemist.com/api/v1/randompoems")
@@ -100,8 +131,10 @@ const fetchRandomPoemPage = () => {
 };
 
 const fetchPoemListPage = () => {
-   fetch
-}
+  fetch("http://localhost:3000/liked-poems")
+    .then((resp) => resp.json())
+    .then((data) => (poems = data));
+};
 
 // HELPERS
 function resetMainDiv() {
@@ -112,6 +145,7 @@ function resetMainDiv() {
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", () => {
   renderHomePage();
+  fetchPoemListPage();
   attachRandomPoemClickEvent();
   attachHomePageLink();
   attachPoemListLink();

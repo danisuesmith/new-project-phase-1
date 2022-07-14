@@ -64,10 +64,17 @@ body {
 .container ul {
   font-weight: 100;
   color: #6a6a6a;
+  display: block;
 }
 
 .container p2 {
   font-weight: 100;
   color: #6a6a6a;
   padding-left: 50px;
+}
+
+.container p {
+  font-weight: 100;
+  color: #6a6a6a;
+  display: block;
 }
