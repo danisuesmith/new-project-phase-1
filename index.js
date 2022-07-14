@@ -82,6 +82,8 @@ function renderRandomPoemPage(data) {
   btn.style.marginLeft = "50px";
   btn.style.marginTop = "10px";
 
+  btn.addEventListener("click", () => favoritePoem(data));
+
   mainDiv().appendChild(h1);
   mainDiv().appendChild(h2);
   mainDiv().appendChild(p1);
@@ -129,7 +131,6 @@ const fetchRandomPoemPage = () => {
   fetch("https://www.poemist.com/api/v1/randompoems")
     .then((resp) => resp.json())
     .then((data) => {
-      // console.log(data[0].poet.url);
       renderRandomPoemPage(data[0]);
     });
 };
@@ -138,6 +139,22 @@ const fetchPoemListPage = () => {
   fetch("http://localhost:3000/liked-poems")
     .then((resp) => resp.json())
     .then((data) => (poems = data));
+};
+
+const favoritePoem = (data) => {
+  fetch("http://localhost:3000/liked-poems", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ poems: data }),
+  })
+    .then((resp) => resp.json())
+    .then((data) => {
+      poems.push(data);
+      renderPoemListPage();
+    });
 };
 
 // HELPERS
