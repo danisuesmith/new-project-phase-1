@@ -91,3 +91,8 @@ body {
   width: 100%;
   text-align: center;
 }
+
+.dark {
+  background-color: #1a1d24;
+  color: #efefef;
+}
