@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
   const themeSelector = document.querySelector("#themeSelector");
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
-    themeSelector.textContent = "☀️";
+    themeSelector.textContent = "🌞";
   } else {
     themeSelector.textContent = "🌙️";
   }
@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
   themeSelector.addEventListener("click", () => {
     if (localStorage.getItem("theme") === "light") {
       localStorage.setItem("theme", "dark");
-      themeSelector.textContent = "☀️";
+      themeSelector.textContent = "🌞";
     } else {
       localStorage.setItem("theme", "light");
       themeSelector.textContent = "🌙️";
