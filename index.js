@@ -1,5 +1,3 @@
-// alert("test");
-
 // dark mode button
 window.addEventListener("load", () => {
   if (!localStorage.getItem("theme")) {
@@ -61,7 +59,7 @@ function renderHomePage() {
   h1.innerText = "About 'Poem a Day' App";
   p.innerText =
     "Use this website to find your poem for the day. Maybe it gives you inspiration for your workday or leads you to new incredible writers. I hope you enjoy!";
-
+  p.style.fontSize = "20px";
   mainDiv().appendChild(h1);
   mainDiv().appendChild(p);
 }
