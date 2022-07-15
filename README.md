@@ -35,10 +35,10 @@ The reason I made this app is because I am always looking for a chance to be ins
 
 ## Installation Instructions
 
-- Open index.html in browser --> in terminal type: "open index.html"
-- Run JSON server for db.json --> in terminal type: "json-server --watch db.json"
-- Use nav bar to click and view "random poem", "poem list", "dark/light mode" and "poem homepage"
-- Favorite random poems you like so they are added to the json server :)
+1. Open index.html in browser --> in terminal type: "open index.html"
+2. Run JSON server for db.json --> in terminal type: "json-server --watch db.json"
+3. Use nav bar to click and view "random poem", "poem list", "dark/light mode" and "poem homepage"
+4. Favorite random poems you like so they are added to the json server :)
 
 ## Inspiration
 
