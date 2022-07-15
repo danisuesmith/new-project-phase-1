@@ -1,9 +1,8 @@
 # Book Search
 
-Why this project and what is it about? What is the purpose?
-(Finish after project is completed)
+The reason I made this project is because I am always looking for a change to be inspired by something new that I have read. Poetry is unique and much less time is needed to read a full poem. As someone who wants to find more time to read, I thought this would be a perfect oppurtunity to create something that does just that. The "Poem a Day" App is for anyone looking to discover something new and get in some reading that only requires a short amount of time. 
 
-Initial Idea: A book search where you can view based on genre. save or like books? Remove books you are not interested in?
+Initial Idea: App where people can go to discover different poets and their works. 
 
 Features:
 
