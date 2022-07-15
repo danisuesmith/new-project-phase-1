@@ -108,23 +108,64 @@ function renderPoemListPage() {
 
   mainDiv().appendChild(h1);
   mainDiv().appendChild(p);
+
   renderPoems();
 }
-
 const renderPoems = () => {
+  // const ul = document.createElement("ul");
+  // poems.forEach((data) => renderPoem(data, ul));
+  // mainDiv().appendChild(ul);
+
   const ul = document.createElement("ul");
+  // const span = document.createElement("span");
   poems.forEach((data) => renderPoem(data, ul));
+
+  // span.classList.add("");
+  ul.classList.add("card");
+
+  ul.style.display = "block";
+  ul.style.background = "#ebf4f4";
+  ul.style.marginLeft = "70px";
+  ul.style.marginRight = "70px";
+  ul.style.marginTop = "10px";
+
   mainDiv().appendChild(ul);
+  // span.appendChild(ul);
 };
 
 const renderPoem = (data, ul) => {
-  const li = document.createElement("li");
-  li.innerText = data.poem;
+  const li1 = document.createElement("li1");
+  const li2 = document.createElement("li2");
+  const li3 = document.createElement("li3");
+  const li4 = document.createElement("li4");
 
-  li.style.textAlign = "left";
-  li.style.paddingLeft = "50px";
+  li1.innerText = data.poems.title;
+  li2.innerText = data.poems.poet.name;
+  li3.innerText = data.poems.content;
+  li4.innerText = data.poems.url;
 
-  ul.appendChild(li);
+  li1.style.textAlign = "center";
+  li1.style.display = "block";
+
+  li2.style.textAlign = "center";
+  li2.style.display = "block";
+
+  li3.style.textAlign = "center";
+  li3.style.display = "block";
+
+  li4.style.textAlign = "center";
+  li4.style.display = "block";
+  li4.style.marginBottom = "20px";
+
+  li1.classList.add("card-title");
+  li2.classList.add("card-title");
+  li3.classList.add("card-content");
+  li4.classList.add("card-content");
+
+  ul.appendChild(li1);
+  ul.appendChild(li2);
+  ul.appendChild(li3);
+  ul.appendChild(li4);
 };
 
 const fetchRandomPoemPage = () => {
