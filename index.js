@@ -9,6 +9,8 @@ window.addEventListener("load", () => {
   const themeSelector = document.querySelector("#themeSelector");
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
+    mainDiv().classList.add("dark");
+
     themeSelector.textContent = "🌞";
   } else {
     themeSelector.textContent = "🌙️";
@@ -24,6 +26,7 @@ window.addEventListener("load", () => {
     }
 
     document.body.classList.toggle("dark");
+    mainDiv().classList.toggle("dark");
   });
 });
 
