@@ -25,6 +25,19 @@
         }
       },
       "id": 2
+    },
+    {
+      "poems": {
+        "title": "Experience",
+        "content": "Three memories hold us ever\nWith longing and with pain;\nThree memories Time has never\nBeen able to restrain;\nThat in each life remain\nA part of heart and brain.\n\nThe first 's of that which taught us\nTo follow, Beauty still;\nWho to the Fountain brought us\nOf ancient good and ill,\nAnd bade us drink our fill\nAt Life's wild-running rill.\n\nThe second one, that 's driven\nOf anguish and delight,\nHolds that which showed us Heaven,\nThrough Love's triumphant might;\nAnd, deep beneath its height,\nHell, sighing in the night.\n\nThe third none follows after:\nIts form is veiled and dim;\nIts eyes are tears and laughter,\nThat look beyond the rim\nOf earth and point to Him,\nWho rules the Seraphim.",
+        "url": "https://www.poemist.com/madison-julius-cawein/experience",
+        "poet": {
+          "name": "Madison Julius Cawein",
+          "url": "https://www.poemist.com/madison-julius-cawein",
+          "photo_avatar_url": "https://www.poemist.com/storage/poets-avatars/202202/madison-julius-cawein.jpg"
+        }
+      },
+      "id": 3
     }
   ]
 }
