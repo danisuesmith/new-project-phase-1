@@ -1,4 +1,4 @@
-# Poem App
+# Poem A Day App
 
 ## Initial Idea
 

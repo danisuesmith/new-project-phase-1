@@ -38,6 +38,32 @@
         }
       },
       "id": 3
+    },
+    {
+      "poems": {
+        "title": "Question And Answer",
+        "content": "'CAN the soul die, believe you?\nBecause it seems to me\nMy soul is dead and buried,\nSo still it seems to be.\n\n'It quivers not with joy;\nIt moaneth not with pain;\nThere is no note in nature \nAwakens it again.\n\n'Those white clouds in the azure;\nThose lanes; those breezy trees;\nThose softly gliding swallows;\nThose fluted melodies;\n\n'Those shadows in the meadows,\nRunning a fitful race;\nWith pleasure once they thrilled me,\nBut coldly now I gaze.'\n\nFear not; oh! not so lightly\nThe soul of mortal dies;\nIt has but wept itself to sleep,\nAnd all unconscious lies.\n\nThe surging feelings overwrought,\nThey have but ebbed away,\nAnd left the soul a little while\nWith all their changeful spray.\n\nBut stronger, deeper, fuller, in\nThe billowy tide will roll,\nAnd overflood, with life and love,\nThe ever living soul.",
+        "url": "https://www.poemist.com/mathilde-blind/question-and-answer",
+        "poet": {
+          "name": " Mathilde Blind",
+          "url": "https://www.poemist.com/mathilde-blind",
+          "photo_avatar_url": "https://www.poemist.com/images/poet-pen.png"
+        }
+      },
+      "id": 4
+    },
+    {
+      "poems": {
+        "title": "Spring Song To Ireland",
+        "content": "Weep no more, heart of my heart, no more!\nThe night has passed and the dawn is here,\nThe cuckoo calls from the budding trees,\nAnd tells us that Spring is near.\nSorrow no more, beloved, no more!\nFor see, sweet emblem of hope untold,\nThe tears that soft on the shamrocks fall\nThere turn to blossoms of gold.\nWinter has gone with his blighting breath,\nNo more to chill thee with cold or fear,\nThe brook laughs loud in its liberty,\nGreen buds on the hedge appear.\nWeep no more, life of my heart, no more!\nThe birds are carolling sweet and clear;\nThe warmth of Summer is in the breeze,\nAnd the Spring—the Spring is here.",
+        "url": "https://www.poemist.com/dora-sigerson-shorter/spring-song-to-ireland",
+        "poet": {
+          "name": "Dora Sigerson Shorter",
+          "url": "https://www.poemist.com/dora-sigerson-shorter",
+          "photo_avatar_url": "https://www.poemist.com/images/poet-pen.png"
+        }
+      },
+      "id": 5
     }
   ]
 }
