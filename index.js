@@ -138,15 +138,10 @@ function renderPoemListPage() {
   renderPoems();
 }
 const renderPoems = () => {
-  // const ul = document.createElement("ul");
-  // poems.forEach((data) => renderPoem(data, ul));
-  // mainDiv().appendChild(ul);
-
   const ul = document.createElement("ul");
-  // const span = document.createElement("span");
+
   poems.forEach((data) => renderPoem(data, ul));
 
-  // span.classList.add("");
   ul.classList.add("card");
 
   ul.style.display = "block";
@@ -156,7 +151,6 @@ const renderPoems = () => {
   ul.style.marginTop = "10px";
 
   mainDiv().appendChild(ul);
-  // span.appendChild(ul);
 };
 
 const renderPoem = (data, ul) => {
